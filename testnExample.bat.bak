@@ -11,12 +11,16 @@
 
 :Main
 ::update "result" 
-call GetChar1.bat :GetChar asdasd
-echo %asdasd%
-
+call GetCharLib.bat :GetChar result
+echo %result%
+call :GetUserControll
 
 goto :Main
 goto :eof
 :: -----------------------------------------------------------------
 :: Functions here
 :: -----------------------------------------------------------------
+:GetUserControll
+	call GetCharLib.bat :GetChar result
+	IF %result%=="S" (echo yes)
+	EXIT /B 0

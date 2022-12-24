@@ -22,3 +22,8 @@ goto :EOF
 	for /F "tokens=1 delims=," %%a in ('"choice /N /C 0123456789abcdefghijklmnopqrstuvwxyz"') do (set "result=%%a")
 	endlocal & set result=%result% & set %~1=%result%
 	EXIT /B 0
+:ConsolePrint <> <>
+	setlocal
+	<nul set /p "=%~1"
+	endlocal
+	EXIT /B 0
